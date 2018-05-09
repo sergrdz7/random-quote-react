@@ -1,5 +1,6 @@
 import React from 'react';
 import QuoteButton from './QuoteButton.js';
+import TwitterButton from './TwitterButton.js';
 
 class QuoteBox extends React.Component{
 //Add state which to contain current or different
@@ -51,11 +52,16 @@ class QuoteBox extends React.Component{
 
   }
 
+  shareTwitter = () =>{
+    console.log('twitter');
+  }
+
   render(){
     return(
     <div>
       <div>Display Quote</div>
       <QuoteButton click={this.getQuote}/>
+      <TwitterButton click={this.shareTwitter}/>
       <h1>{this.state.quote}</h1>
 
     </div>

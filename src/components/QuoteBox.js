@@ -52,7 +52,9 @@ class QuoteBox extends React.Component{
 
   }
 
-  shareTwitter = () =>{
+  shareTwitter = () => {
+    //Using ES6 template literas (backticks)
+    window.open(`https://twitter.com/intent/tweet?text="${this.state.quote}" - ${this.state.author}`);
     console.log('twitter');
   }
 
@@ -62,7 +64,8 @@ class QuoteBox extends React.Component{
       <div>Display Quote</div>
       <QuoteButton click={this.getQuote}/>
       <TwitterButton click={this.shareTwitter}/>
-      <h1>{this.state.quote}</h1>
+      <p>"{this.state.quote}"</p>
+      <p>-{this.state.author}</p>
 
     </div>
     );

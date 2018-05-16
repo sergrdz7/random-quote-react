@@ -1,0 +1,62 @@
+div .Box {
+
+
+  width: 400px;
+  height: 550px;
+  padding: 30px;
+  margin: 60px auto;
+  text-align: center;
+  color: white;
+
+  border-bottom: solid #64E6BA 2px;
+
+  background: linear-gradient(#212c33,#40474c,#212c33);
+
+}
+.Header{
+  text-align: center;
+  margin-top: 50px;
+  color:#64E6BA;
+  font-size: 50px;
+}
+
+.Quote{
+  margin-top: 50px;
+  font-size: 25px;
+
+}
+
+.Author{
+  font-size: 20px;
+  font-style: italic;
+}
+
+.Divider{
+  margin: 50px;
+  height: 2px;
+  background-color: #64E6BA;
+}
+
+.ButtonDiv {
+  display:flex;
+  /* Change to column when smaller screen */
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.ButtonStyle{
+  border-radius: 50%;
+  color: #64E6BA;
+  background: transparent;
+  border: 2px solid #64E6BA;
+  cursor: pointer;
+  transition: .5s;
+  padding: 10px;
+}
+.ButtonStyle:hover{
+  transform: scale(1.15);
+
+}
+.Color {
+  color: #64E6BA;
+}

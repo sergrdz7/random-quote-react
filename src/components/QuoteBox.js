@@ -1,10 +1,13 @@
 import React from 'react';
 import QuoteButton from './QuoteButton.js';
 import TwitterButton from './TwitterButton.js';
+import QuoteBoxStyle from './QuoteBoxStyle.css';
+
+import FaQuoteLeft from 'react-icons/lib/fa/quote-left';
+import FaQuoteRight from 'react-icons/lib/fa/quote-right';
+
 
 class QuoteBox extends React.Component{
-//Add state which to contain current or different
-//quotes to pick from
 
   constructor(props){
     //Make sure to pass props to base constructor
@@ -13,12 +16,6 @@ class QuoteBox extends React.Component{
       quote: '',
       author: ''
     }
-
-    //necesarry bindings
-    // this.getQuote = this.getQuote.bind(this);
-     // http://quotes.rest/quote/random.json
-     // http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1
-     // http://api.forismatic.com/api/1.0/
   }
   componentDidMount() {
     fetch('https://talaikis.com/api/quotes/random/')
@@ -34,7 +31,7 @@ class QuoteBox extends React.Component{
   }
 
   getQuote = () => {
-    // //get quote from setState
+    //fetch quote from api
     fetch('https://talaikis.com/api/quotes/random/')
     .then(result => result.json())
     .then(data => {
@@ -43,8 +40,6 @@ class QuoteBox extends React.Component{
         author: data.author
       })
       console.log(data)
-      // console.log(data.quote);
-      // console.log(data.author)
       console.log(this.state.quote)
       console.log(this.state.author)
 
@@ -60,14 +55,25 @@ class QuoteBox extends React.Component{
 
   render(){
     return(
-    <div>
-      <div>Display Quote</div>
-      <QuoteButton click={this.getQuote}/>
-      <TwitterButton click={this.shareTwitter}/>
-      <p>"{this.state.quote}"</p>
-      <p>-{this.state.author}</p>
+    <React.Fragment>
+      <div className='Box'>
 
-    </div>
+        <p className='Quote'><FaQuoteLeft size={30} className='Color' /> {this.state.quote} <FaQuoteRight size={30} className='Color' /></p>
+
+        <p className='Author'>-{this.state.author}</p>
+
+        <div className='Divider'></div>
+
+        <div className='ButtonDiv'>
+          <TwitterButton click={this.shareTwitter}/>
+          <QuoteButton click={this.getQuote}/>
+        </div>
+
+      </div>
+
+
+
+    </React.Fragment>
     );
   }
 }

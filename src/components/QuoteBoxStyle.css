@@ -1,34 +1,35 @@
+.Header{
+  text-align: center;
+  margin-top: 50px;
+  color:#efeded;
+  font-size: 50px;
+}
+
 div .Box {
-
-
   width: 400px;
   height: 550px;
   padding: 30px;
   margin: 60px auto;
   text-align: center;
-  color: white;
-
+  color:#efeded;
   border-bottom: solid #64E6BA 2px;
-
+  transition-duration: 1s;
   background: linear-gradient(#212c33,#40474c,#212c33);
-
-}
-.Header{
-  text-align: center;
-  margin-top: 50px;
-  color:#64E6BA;
-  font-size: 50px;
+  animation: fadein 2s;
 }
 
 .Quote{
   margin-top: 50px;
   font-size: 25px;
+  transition-duration: 1s;
+  animation: fadein 2s;
 
 }
 
 .Author{
   font-size: 20px;
   font-style: italic;
+  color:#d8d8d8;
 }
 
 .Divider{
@@ -42,6 +43,7 @@ div .Box {
   /* Change to column when smaller screen */
   flex-direction: row;
   justify-content: space-between;
+  transition: 3s;
 }
 
 .ButtonStyle{
@@ -50,13 +52,26 @@ div .Box {
   background: transparent;
   border: 2px solid #64E6BA;
   cursor: pointer;
-  transition: .5s;
+  transition-duration: 1s;
   padding: 10px;
+
 }
 .ButtonStyle:hover{
-  transform: scale(1.15);
+  transform:scale(.8);
 
+}
+.ButtonStyle:focus{
+  outline: 0;
 }
 .Color {
   color: #64E6BA;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

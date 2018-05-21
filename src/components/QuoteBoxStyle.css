@@ -6,6 +6,9 @@
 }
 
 div .Box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 400px;
   height: 550px;
   padding: 30px;
@@ -15,7 +18,7 @@ div .Box {
   border-bottom: solid #64E6BA 2px;
   transition-duration: 1s;
   background: linear-gradient(#212c33,#40474c,#212c33);
-  animation: fadein 2s;
+  /* animation: fadein 2s; */
 }
 
 .Quote{
@@ -39,10 +42,15 @@ div .Box {
 }
 
 .ButtonDiv {
+  position: relative;
   display:flex;
+
   /* Change to column when smaller screen */
   flex-direction: row;
+  /* align-items: flex-end;
+  align-content: flex-end; */
   justify-content: space-between;
+
   transition: 3s;
 }
 
@@ -67,11 +75,17 @@ div .Box {
   color: #64E6BA;
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.fade-enter{
+  opacity: 0;
+}
+.fade-enter-active{
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+.fade-leave{
+  opacity: 1;
+}
+.fade-leave-active{
+  opacity: 0;
+  transition: opacity .2ms;
 }

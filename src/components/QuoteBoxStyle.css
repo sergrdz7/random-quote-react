@@ -6,13 +6,15 @@
 }
 
 div .Box {
+  font-size: 25px;
   display: flex;
   flex-direction: column;
+
   justify-content: space-between;
-  width: 400px;
-  height: 550px;
+  width: 550px;
+  height: 500px;
   padding: 30px;
-  margin: 60px auto;
+  margin: 20px auto;
   text-align: center;
   color:#efeded;
   border-bottom: solid #64E6BA 2px;
@@ -23,7 +25,7 @@ div .Box {
 
 .Quote{
   margin-top: 50px;
-  font-size: 25px;
+
   transition-duration: 1s;
   animation: fadein 2s;
 
@@ -45,12 +47,8 @@ div .Box {
   position: relative;
   display:flex;
 
-  /* Change to column when smaller screen */
   flex-direction: row;
-  /* align-items: flex-end;
-  align-content: flex-end; */
   justify-content: space-between;
-
   transition: 3s;
 }
 
@@ -66,7 +64,6 @@ div .Box {
 }
 .ButtonStyle:hover{
   transform:scale(.8);
-
 }
 .ButtonStyle:focus{
   outline: 0;
@@ -74,6 +71,13 @@ div .Box {
 .Color {
   color: #64E6BA;
 }
+.quoteSize{
+  font-size: 40px;
+}
+
+
+
+/* CSSTransitionGroup necessary classes*/
 
 .fade-enter{
   opacity: 0;
@@ -88,4 +92,44 @@ div .Box {
 .fade-leave-active{
   opacity: 0;
   transition: opacity .2ms;
+}
+
+
+
+/* Responsive breakpoints*/
+@media only screen and (max-width: 630px){
+  div.Box{
+    width: 430px;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .Header{
+    font-size: 40px;
+  }
+  div.Box {
+    width: 350px;
+    padding: 15px;
+    font-size: 22px;
+    align-content: stretch;
+    margin: 10px auto;
+
+  }
+  .quoteSize{
+    font-size: 30px;
+  }
+
+  .ButtonDiv{
+
+    justify-content: space-around;
+    flex-direction: column-reverse;
+  }
+
+  .ButtonStyle{
+    border-radius: 10px;
+    margin: 10px 0;
+  }
+  .ButtonStyle:hover{
+    transform:scale(.93);
+  }
 }

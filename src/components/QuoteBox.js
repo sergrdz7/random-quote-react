@@ -7,10 +7,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import FaQuoteLeft from 'react-icons/lib/fa/quote-left';
 import FaQuoteRight from 'react-icons/lib/fa/quote-right';
 
-//const randomColors = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'];
 class QuoteBox extends React.Component{
-
-
 
   constructor(props){
     //Make sure to pass props to base constructor
@@ -70,15 +67,14 @@ class QuoteBox extends React.Component{
 
 
   getRandomColor = () => {
-    const randColors = ['#5d94af','#2aaa79','#6e42ce','#802D15','#D4826A','#D4A46A','#804F15','#6F90A2','#13B510','#6F4D8F','#9277AC','#69802E','#F01A83','#A55800','#FF971C','#FFD300','#FFD300']
+    const randColors = ['#5d94af','#2aaa79','#6e42ce','#802D15','#D4826A','#D4A46A','#804F15','#6F90A2','#13B510','#6F4D8F','#9277AC','#69802E','#F01A83','#A55800','#FF971C','#FFD300','#FFD300','#837EB1','#2B4A6F','#984C8A','#C56277']
     let number = Math.floor(Math.random() * randColors.length);
 
     this.setState({
       color: randColors[number]
     })
-    //update body background color when random color is selected
 
-    console.log(randColors[number]);
+    //console.log(randColors[number]);
   }
 
 
@@ -92,9 +88,9 @@ class QuoteBox extends React.Component{
           transitionEnterTimeout={300}
           transitionLeaveTimeout={.2}>
             <p className='Quote' key={this.state.quote}>
-              <FaQuoteLeft size={40} className='Color' style={{color:this.state.color, transitionDuration: '1s'}}/>
+              <FaQuoteLeft className='Color quoteSize' style={{color:this.state.color, transitionDuration: '1s'}}/>
                 {this.state.quote}
-              <FaQuoteRight size={40} className='Color' style={{color: this.state.color, transitionDuration: '1s'}}/>
+              <FaQuoteRight className='Color quoteSize' style={{color: this.state.color, transitionDuration: '1s'}}/>
             </p>
         </ReactCSSTransitionGroup>
 
@@ -120,5 +116,3 @@ class QuoteBox extends React.Component{
 }
 
 export default QuoteBox;
-//<button onClick={this.getQuote}>Display quote</button>
-  // <div className='Divider' style={{backgroundColor:this.state.color}}></div>

@@ -9,6 +9,8 @@
 ### Sample
 ![quote generator sample](https://github.com/sergrdz7/random-quote-react/blob/master/quote.png?raw=true)
 
+### [Try it out!](https://sergrdz7.github.io/random-quote-react/)
+
 ### This project was created with:
 1. [Create React App](https://github.com/facebookincubator/create-react-app)
 2. [talaikis. api](https://talaikis.com/random_quotes_api/) to get quotes.

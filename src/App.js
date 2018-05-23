@@ -9,10 +9,10 @@ class App extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <div>
           <h1 className='Header'>Quote Generator</h1>
           <QuoteBox/>
-      </React.Fragment>
+      </div>
     );
   }
 }

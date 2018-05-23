@@ -2,7 +2,7 @@ import React from 'react';
 import QuoteButton from './QuoteButton.js';
 import TwitterButton from './TwitterButton.js';
 import QuoteBoxStyle from './QuoteBoxStyle.css';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { CSSTransitionGroup } from 'react-transition-group';
 
 import FaQuoteLeft from 'react-icons/lib/fa/quote-left';
 import FaQuoteRight from 'react-icons/lib/fa/quote-right';
@@ -80,10 +80,9 @@ class QuoteBox extends React.Component{
 
   render(){
     return(
-    <React.Fragment>
 
       <div className='Box' style={{borderColor:this.state.color}}>
-        <ReactCSSTransitionGroup
+        <CSSTransitionGroup
           transitionName='fade'
           transitionEnterTimeout={300}
           transitionLeaveTimeout={.2}>
@@ -92,14 +91,14 @@ class QuoteBox extends React.Component{
                 {this.state.quote}
               <FaQuoteRight className='Color quoteSize' style={{color: this.state.color, transitionDuration: '1s'}}/>
             </p>
-        </ReactCSSTransitionGroup>
+        </CSSTransitionGroup>
 
-        <ReactCSSTransitionGroup
+        <CSSTransitionGroup
           transitionName='fade'
           transitionEnterTimeout={300}
           transitionLeaveTimeout={.2}>
             <p className='Author' key={this.state.author}>- {this.state.author}</p>
-        </ReactCSSTransitionGroup>
+        </CSSTransitionGroup>
 
 
         <div className='ButtonDiv'>
@@ -110,7 +109,6 @@ class QuoteBox extends React.Component{
 
       </div>
 
-    </React.Fragment>
     );
   }
 }

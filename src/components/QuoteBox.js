@@ -61,7 +61,7 @@ class QuoteBox extends React.Component{
   shareTwitter = () => {
     //Using ES6 template literas (backticks)
     window.open(`https://twitter.com/intent/tweet?text="${this.state.quote}" - ${this.state.author}`);
-    console.log('twitter');
+    //console.log('twitter');
   }
 
 
